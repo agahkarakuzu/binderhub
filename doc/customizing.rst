@@ -229,12 +229,13 @@ The `repo2data <https://github.com/SIMEXP/Repo2Data>`_  python package provides 
             - name: extra-volume
               mountPath: /data
 
-In the example above, a ``repo2data`` init container is run to:
+In the configuration above, a ``conpdev/repo2data`` init container is run to:
+
 * Pull the data described by a `data_requirements.json file <https://github.com/SIMEXP/Repo2Data#input>`_ in the git repository to the server 
 * Set necessary configurations to associate the downloaded data with the corresponding user pod. 
 
-Having the dataset available pripor to the user pod running, this approach does not prolong the time for spawning a user session and keeps the Docker images lean. Note that the use of ``init_container_build`` is not exclusive to the data management purposes. Any ``init container`` operation can be specified before the ``repo2docker`` container is started in the build pod. 
+Having the dataset available pripor to the user pod running, this approach does not prolong the time for spawning a user session and keeps the Docker images lean. Note that the use of ``init_container_build`` is not exclusive to the data management purposes. Any process that can be defined as a ``init container`` job can be specified before the ``repo2docker`` container is started in the build pod. 
 
 .. note::
 
-    Commits pushed to the user's git repository will trigger ``init_container_build`` steps.`
+    Commits pushed to the user's git repository will trigger ``init_container_build`` steps.
