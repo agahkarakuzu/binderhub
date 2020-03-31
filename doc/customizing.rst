@@ -238,4 +238,4 @@ Having the dataset available pripor to the user pod running, this approach does 
 
 .. note::
 
-    Commits pushed to the user's git repository will trigger ``init_container_build`` steps.
+    Commits pushed to the user's git repository will trigger ``init_container_build`` runs.
